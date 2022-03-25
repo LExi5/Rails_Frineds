@@ -1,0 +1,58 @@
+
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div class="alert alert-warning" role="alert">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+    <%= form.text_field :first_name, class: "form-control",
+    aria_label:"Sizing example input", aria_describedby:"inputGroup-sizing-sm"
+  %>
+  </div>
+
+
+   <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+    <%= form.text_field :last_name, class: "form-control",
+    aria_label:"Sizing example input", aria_describedby:"inputGroup-sizing-sm"
+  %>
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+    <%= form.text_field :email, class: "form-control",
+    aria_label:"Sizing example input", aria_describedby:"inputGroup-sizing-sm"
+  %>
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Phone</span>
+    <%= form.text_field :phone, class: "form-control",
+    aria_label:"Sizing example input", aria_describedby:"inputGroup-sizing-sm"
+  %>
+  </div>
+
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">@</span>
+    <%= form.text_field :telegram, class: "form-control",
+    aria_label:"Sizing example input", aria_describedby:"inputGroup-sizing-sm"
+  %>
+  </div>
+  </br>
+
+  <div class="input-group input-group-sm mb-3">
+    <%= form.number_field :user_id, id: :friend_user_id, class: "form-control",aria_label:"Sizing example input", aria_describedby:"inputGroup-sizing-sm", value: current_user.id, type: :hidden%>
+  </div>
+  <div>
+    <%= form.submit class:"btn btn-outline-success"%>
+  </div>
+<% end %>

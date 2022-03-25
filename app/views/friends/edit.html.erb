@@ -1,0 +1,16 @@
+<h1>Editing friend</h1>
+
+<%= render "form", friend: @friend %>
+
+<br>
+
+<div>
+  <div class="row row-cols-auto">
+    <div class="col">
+      <%= link_to "Show", @friend, class:"btn btn-outline-dark"%> 
+    </div>
+    <div class="col">
+      <%= link_to "Back", friends_path, class:"btn btn-outline-dark" %>
+    </div>
+  </div>
+</div>
