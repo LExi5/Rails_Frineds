@@ -13,6 +13,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
+gem 'pagy', '~> 5.10' # omit patch digit
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
