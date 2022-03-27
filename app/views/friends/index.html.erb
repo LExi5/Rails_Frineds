@@ -39,7 +39,7 @@
       <% end %>
     </tbody>
   </table>
-   <%==  render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+   <%==  render partial: 'shared/pagination', locals: { pagy: @pagy } if @pagy.pages > 1 %>
   <br>
   <%= link_to 'Add', new_friend_path, class:"btn btn-outline-dark"%>
 <% else %>

@@ -6,7 +6,7 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @pagy, @friends = pagy(Friend.all)
+    @pagy, @friends = pagy(Friend.where( user_id: current_user.id))
   end
 
   # GET /friends/1
